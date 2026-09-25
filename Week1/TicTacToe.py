@@ -11,6 +11,7 @@ WINNING_LINES = (
 
 
 def winner(board):
+    """Return the winner, or None when the game has no winner yet."""
     for first, second, third in WINNING_LINES:
         if board[first] == board[second] == board[third] != " ":
             return board[first]
@@ -18,6 +19,7 @@ def winner(board):
 
 
 def get_all_solutions(board, player="X", moves=()):
+    """Return every legal game completion from the current board."""
     game_winner = winner(board)
     empty_cells = [cell for cell in range(1, 10) if board[cell] == " "]
 
@@ -36,6 +38,10 @@ def get_all_solutions(board, player="X", moves=()):
             )
         )
     return solutions
+
+print("USN: 1BM25CS489")
+print("NAME: OMKAR SADASHIV KOKATNOOR");
+print("")
 
 
 def print_board(board):
